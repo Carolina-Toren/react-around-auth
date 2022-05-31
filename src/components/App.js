@@ -94,7 +94,7 @@ function App() {
 					navigate('/');
 				})
 				.catch(console.log);
-		} else console.log('fail');
+		}
 	}
 
 	React.useEffect(() => {
@@ -106,7 +106,7 @@ function App() {
 		auth
 			.authorize(values)
 			.then(checkToken)
-			.chath((err) => {
+			.catch((err) => {
 				console.log(err);
 				setIsInfoTooltipOpen(true);
 			});

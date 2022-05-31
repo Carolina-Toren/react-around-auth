@@ -1,19 +1,17 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
-export default function Login(props) {
+export default function Login({onLoginClick}) {
 	const [values, setValues] = useState('');
 
 	function handleChange(evt) {
-		console.log('chjange');
 		const {type, value} = evt.target;
 		setValues({...values, [type]: value});
 	}
 
 	function handleSubmit(evt) {
 		evt.preventDefault();
-		console.log(values);
-		props.onLoginClick(values);
+		onLoginClick(values);
 	}
 
 	const navigate = useNavigate();
