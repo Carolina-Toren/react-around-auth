@@ -71,13 +71,11 @@ function App() {
 			.then(() => {
 				navigate('./login');
 				setIsRegistrationSucceeded(true);
+				setIsInfoTooltipOpen(true);
 			})
 			.catch((err) => {
 				console.log(err);
 				setIsRegistrationSucceeded(false);
-			})
-			.finally(() => {
-				setIsInfoTooltipOpen(true);
 			});
 	}
 
