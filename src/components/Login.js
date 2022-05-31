@@ -18,7 +18,7 @@ export default function Login({onLoginClick}) {
 	return (
 		<>
 			<div className='login'>
-				<form className='login__form'>
+				<form className='login__form' onSubmit={handleSubmit}>
 					<h1 className='login__header'>Log in</h1>
 					<input
 						className='login__input'
@@ -26,6 +26,7 @@ export default function Login({onLoginClick}) {
 						autoComplete='email'
 						placeholder='Email'
 						onChange={handleChange}
+						value={values.email}
 					/>
 					<input
 						className='login__input'
@@ -33,8 +34,9 @@ export default function Login({onLoginClick}) {
 						autoComplete='current-password'
 						placeholder='Password'
 						onChange={handleChange}
+						value={values.password}
 					/>
-					<button className='login__btn' type='submit' id='edit-save-btn' onClick={handleSubmit}>
+					<button className='login__btn' type='submit' id='login-btn'>
 						Log in
 					</button>
 					<a className='login__link' onClick={() => navigate('/register')}>

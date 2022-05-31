@@ -130,11 +130,9 @@ function App() {
 			.then(() => {
 				const newCards = cards.filter((item) => item._id !== deleteCard._id);
 				setCards(newCards);
-			})
-			.catch(console.log)
-			.finally(() => {
 				setIsDeleteCardPopupOpen(false);
-			});
+			})
+			.catch(console.log);
 	}
 
 	const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -184,12 +182,10 @@ function App() {
 					avatar: res.avatar,
 					_id: res._id,
 				});
+				setIsEditProfilePopupOpen(false);
 			})
 			.catch((err) => {
 				console.log(`Error: ${err}`);
-			})
-			.finally(() => {
-				setIsEditProfilePopupOpen(false);
 			});
 	}
 
@@ -218,12 +214,10 @@ function App() {
 			.createCard(data)
 			.then((newCard) => {
 				setCards([newCard, ...cards]);
+				setIsAddPlacePopupOpen(false);
 			})
 			.catch((err) => {
 				console.log(`Error: ${err}`);
-			})
-			.finally(() => {
-				setIsAddPlacePopupOpen(false);
 			});
 	}
 

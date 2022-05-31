@@ -5,6 +5,11 @@ export default function AddPlacePopup({isOpen, onClose, onAddPlaceSubmit}) {
 	const [place, setPlace] = React.useState('');
 	const [link, setLink] = React.useState('');
 
+	React.useEffect(() => {
+		setPlace('');
+		setLink('');
+	}, [isOpen]);
+
 	function handlePlaceChange(e) {
 		setPlace(e.target.value);
 	}
@@ -18,8 +23,6 @@ export default function AddPlacePopup({isOpen, onClose, onAddPlaceSubmit}) {
 			name: place,
 			link: link,
 		});
-		setPlace('');
-		setLink('');
 	}
 	return (
 		<PopupWithForm

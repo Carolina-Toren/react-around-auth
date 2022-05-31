@@ -23,7 +23,7 @@ export default function Register(props) {
 
 	return (
 		<div className='login'>
-			<form className='login__form'>
+			<form className='login__form' onSubmit={handleSubmit}>
 				<h1 className='login__header'>Sign up</h1>
 				<input
 					className='login__input'
@@ -31,6 +31,7 @@ export default function Register(props) {
 					autoComplete='email'
 					placeholder='Email'
 					onChange={handleEmailInput}
+					value={email}
 				></input>
 				<input
 					className='login__input'
@@ -38,8 +39,9 @@ export default function Register(props) {
 					autoComplete='new-password'
 					placeholder='Password'
 					onChange={handlePasswordInput}
+					value={password}
 				></input>
-				<button className='login__btn' type='submit' id='register-signup-btn' onClick={handleSubmit}>
+				<button className='login__btn' type='submit' id='register-signup-btn'>
 					Sign up
 				</button>
 				<a className='login__link' onClick={() => navigate('/login')}>
