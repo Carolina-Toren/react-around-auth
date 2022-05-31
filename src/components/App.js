@@ -102,7 +102,6 @@ function App() {
 	}, []);
 
 	function handleLogin(values) {
-		console.log(values);
 		auth
 			.authorize(values)
 			.then(checkToken)
