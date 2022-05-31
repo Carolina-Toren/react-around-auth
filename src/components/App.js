@@ -199,13 +199,11 @@ function App() {
 					avatar: res.avatar,
 					_id: res._id,
 				});
+				seIsEditAvatarPopupOpen(false);
 			})
 
 			.catch((err) => {
 				console.log(`Error: ${err}`);
-			})
-			.finally(() => {
-				seIsEditAvatarPopupOpen(false);
 			});
 	}
 

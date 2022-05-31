@@ -31,7 +31,7 @@ export default function Register(props) {
 					autoComplete='email'
 					placeholder='Email'
 					onChange={handleEmailInput}
-					value={email}
+					value={email || ''}
 				></input>
 				<input
 					className='login__input'
@@ -39,7 +39,7 @@ export default function Register(props) {
 					autoComplete='new-password'
 					placeholder='Password'
 					onChange={handlePasswordInput}
-					value={password}
+					value={password || ''}
 				></input>
 				<button className='login__btn' type='submit' id='register-signup-btn'>
 					Sign up

@@ -60,7 +60,7 @@ export default function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
 			<span className='popup__error' id='title-input-error' />
 
 			<input
-				type='url'
+				type='text'
 				className='popup__input'
 				name='occupation'
 				id='occupation-input'
